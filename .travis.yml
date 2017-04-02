@@ -23,6 +23,8 @@ script:
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u=${DOCKERHUB_NAME} -p=${DOCKERHUB_PASS};
-    docker tag alpine-base-alpine:latest mmaas/base-alpine:${TRAVIS_JOB_NUMBER};
-    docker push mmaas/base-alpine:${TRAVIS_JOB_NUMBER};
+    docker tag alpine-base-alpine:latest mmaas/base-alpine:${TRAVIS_BUILD_NUMBER};
+    docker tag alpine-base-alpine:latest mmaas/base-alpine:latest;
+    docker push mmaas/base-alpine:${TRAVIS_BUILD_NUMBER};
+    docker push mmaas/base-alpine:latest;
     fi; docker images

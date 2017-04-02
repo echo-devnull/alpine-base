@@ -19,7 +19,6 @@ services:
 script:
   - ansible-container build --from-scratch
 
-
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u=${DOCKERHUB_NAME} -p=${DOCKERHUB_PASS};

@@ -25,4 +25,4 @@ after_success:
     docker login -u="$DOCKERHUB_NAME" -p="$DOCKERHUB_PASS";
     docker tag alpine-base:latest mmaas/alpinebase:IMAGETAG;
     docker push mmaas/alpinebase:IMAGETAG;
-    fi
+    fi; docker images

@@ -2,7 +2,7 @@
 
 # alpine-base
 
-Very simply put: Copy of a apline image. There's almost nothing in this image except for the [S6 init system](https://blog.tutum.co/2014/12/02/docker-and-s6-my-new-favorite-process-supervisor/).
+Very simply put: Copy of a apline image. There's almost nothing in this image except for the dumb-init script.
 
 I use this git repo as both template code for other more involved images and for creating my alpine base image
 

@@ -14,9 +14,9 @@
 - hosts: all
   gather_facts: false
   tasks:
-    - name: Install s6 init system
+    - name: Install dumb-init system
       apk:
-        name: s6
+        name: dumb-init
         state: present
         update_cache: yes
 

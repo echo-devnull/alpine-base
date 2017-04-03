@@ -3,4 +3,4 @@ services:
 
   alpine:
     image: alpine:3.5
-    command: ['/bin/s6-svscan', '/etc/s6']
+    command: ['dumb-init', '--']

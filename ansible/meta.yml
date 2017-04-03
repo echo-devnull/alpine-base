@@ -1,6 +1,6 @@
 galaxy_info:
   author: Mark Maas
-  description: Prepares my alpine base image with the S6 init system.
+  description: Prepares my alpine base image with the dumb-init installed.
   company: Maas-Martin B.V.
 
   license: license (GPLv2, CC-BY, etc)

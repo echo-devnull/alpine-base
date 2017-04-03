@@ -1,25 +1,6 @@
 version: "2"
 services:
-  # Add your containers here, specifying the base image you want to build from
-  # For example:
-  #
-  # abase:
-  #   image: alpine:3.5
-  #   # ports:
-  #   #   - "80:80"
-  #   command: ['/usr/bin/dumb-init', '/usr/sbin/apache2ctl', '-D', 'FOREGROUND']
-  #   dev_overrides:
-  #     environment:
-  #       - "DEBUG=1"
 
   alpine:
     image: alpine:3.5
-    # ports:
-    #   - "80:80"
     command: ['/bin/s6-svscan', '/etc/s6']
-
-registries: {}
-  # Add optional registries used for deployment. For example:
-  #  google:
-  #    url: https://gcr.io
-  #    namespace: my-cool-project-xxxxxx

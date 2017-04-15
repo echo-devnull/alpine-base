@@ -12,7 +12,7 @@
       raw: $(which python) || apk add --no-cache python
 
   tasks:
-    - name: Install dumb-init system
+    - name: Install tini system
       apk:
         name: tini
         state: present

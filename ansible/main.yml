@@ -7,12 +7,10 @@
 ---
 - hosts: all
   gather_facts: false
-  tasks:
+  pre_tasks:
     - name: Install python
       raw: $(which python) || apk add --no-cache python
 
-- hosts: all
-  gather_facts: false
   tasks:
     - name: Install dumb-init system
       apk:
@@ -20,9 +18,7 @@
         state: present
         update_cache: yes
 
-- hosts: all
-  gather_facts: false
-  tasks:
+  post_tasks:
     - name: Remove software that is not needed
       apk:
         name: "{{ item }}"

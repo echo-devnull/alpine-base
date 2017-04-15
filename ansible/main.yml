@@ -14,7 +14,7 @@
   tasks:
     - name: Install dumb-init system
       apk:
-        name: dumb-init
+        name: tini
         state: present
         update_cache: yes
 

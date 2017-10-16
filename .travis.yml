@@ -5,8 +5,29 @@ python: "2.7"
 before_install:
  - sudo apt-get update -qq
 
+env:
+  - install_method=source
+  - install_method=pip
+
 install:
- - pip install -r requirements.txt
+  # Install requirements.
+  - pip install -r ansible-requirements.txt
+  #- pip install -r requirements.txt
+
+  # Install latest HEAD of ansible-container from source.
+  - |
+    if [ "${install_method}" == "source" ]; then
+      git clone https://github.com/ansible/ansible-container.git
+      cd ansible-container
+      pip install -e .[docker]
+      cd ..
+    fi
+
+  # Install latest stable release of ansible-container from pip.
+  - |
+    if [ "${install_method}" == "pip" ]; then
+      pip install ansible-container[docker]
+    fi
 
 cache:
   directories:

@@ -2,7 +2,7 @@
 
 # alpine-base
 
-Very simply put: Copy of a apline image. There's almost nothing in this image except for the dumb-init script.
+Very simply put: Copy of a apline image. There's almost nothing in this image except for the tini init system.
 
 I use this git repo as both template code for other more involved images and for creating my alpine base image
 

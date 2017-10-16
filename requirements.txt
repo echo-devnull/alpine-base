@@ -1,5 +1,6 @@
 ansible==2.4.0.0
 ansible-container==0.9.2
+ansible-container[docker]==0.9.2
 appdirs==1.4.3
 asn1crypto==0.23.0
 backports.ssl-match-hostname==3.5.0.1

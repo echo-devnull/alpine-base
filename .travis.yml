@@ -39,13 +39,15 @@ sudo: required
 services:
   - docker
 
+before_script:
+  - touch ~/.docker/config.json
+  - docker login -u=${DOCKERHUB_NAME} -p=${DOCKERHUB_PASS}
+
 script:
   - ansible-container build --no-container-cache --flatten
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    rm -rf ~/.docker/config.json; 
-    docker login -u=${DOCKERHUB_NAME} -p=${DOCKERHUB_PASS};
     export DATETAG=`date +%Y%m%d%H%M%S`;
     docker tag alpine-base-alpine:latest mmaas/base-alpine:${TRAVIS_BUILD_NUMBER};
     docker tag alpine-base-alpine:latest mmaas/base-alpine:${DATETAG};

@@ -1,0 +1,8 @@
+---
+# tasks file for tini
+
+- name: Install tini system
+  apk:
+    name: tini
+    state: present
+    update_cache: yes

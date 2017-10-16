@@ -17,7 +17,7 @@ services:
   - docker
 
 script:
-  - ansible-container build --from-scratch --flatten
+  - ansible-container build --no-container-cache --flatten
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then

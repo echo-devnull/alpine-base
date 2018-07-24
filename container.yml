@@ -62,7 +62,7 @@ services:
   #       - "DEBUG=1"
 
   alpine:
-    from: alpine:3.6
+    from: alpine:3.8
     roles:
         - tini
     command: ['/sbin/tini', '--', 'date']

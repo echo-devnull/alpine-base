@@ -43,7 +43,7 @@ before_script:
   - docker login -u=${DOCKERHUB_NAME} -p=${DOCKERHUB_PASS}
 
 script:
-  - ansible-container build --no-container-cache --flatten
+  - ansible-container build --no-container-cache #--flatten Does not seem to work anymore?
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then

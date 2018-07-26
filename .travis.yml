@@ -9,7 +9,7 @@ before_install:
 
 env:
   - install_method=source
-  - install_method=pip
+  #- install_method=pip # Travis can't install docker<3.0.0 and ansible container can't work with newer dockers... sigh.
 
 install:
   # Install requirements.
